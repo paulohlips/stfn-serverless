@@ -1,0 +1,160 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "STFN-Serveless",
+    "description": "An Employee API with AWS Lambdas",
+    "version": "1.0.0",
+    "contact": {
+      "email":"paulohfcmendes@gmail.com"
+    }
+  },
+  "paths": {
+    "/employees": {
+      "post": {
+        "tags": ["Employee"],
+        "summary": "Create a employee register",
+         "description": "Create a employee register",
+         "requestBody": {
+           "content": {
+             "application/json": {
+               "schema": {
+                 "type": "object",
+                 "properties": {
+                   "name": {
+                     "type": "string"
+                   },
+                   "position": {
+                     "type": "string"
+                   },
+                   "age": {
+                    "type": "number"
+                  }
+                 },
+                 "example": {
+                   "name": "Paulo Henrique Ferreira",
+                   "position": "Backend Developer",
+                   "age": 26
+                 }
+               }
+             }
+           }
+         },
+         "responses": {
+           "201": {
+             "description": "Created"
+           }
+         }
+      },
+      "get": {
+        "summary": "List all employees",
+        "description": "List all employees",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "position": {
+                        "type": "string"
+                      },
+                      "age": {
+                        "type": "age"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/employees/{employeeId}": {
+      "put": {
+        "summary": "Update a employee register",
+         "description": "Update a employee register",
+         "requestBody": {
+           "content": {
+             "application/json": {
+               "schema": {
+                 "type": "object",
+                 "properties": {
+                   "name": {
+                     "type": "string"
+                   },
+                   "position": {
+                     "type": "string"
+                   },
+                   "age": {
+                    "type": "number"
+                  }
+                 },
+                 "example": {
+                   "name": "Paulo Mendes",
+                   "position": "Fullstack Developer",
+                   "age": 26
+                 }
+               }
+             }
+           }
+         },
+         "responses": {
+           "201": {
+             "description": "Created"
+           }
+         }
+      },
+      "get": {
+        "summary": "Find one employee his id",
+        "description": "Find one employee his id",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "position": {
+                        "type": "string"
+                      },
+                      "age": {
+                        "type": "age"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete one employee his id",
+        "description": "Delete one employee his id",
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }  
+}

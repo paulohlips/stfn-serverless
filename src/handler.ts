@@ -1,8 +1,10 @@
 import "reflect-metadata";
+import swaggerUi from 'swagger-ui-express'
+
+import swaggerFile from "./swagger.json"
+import "./shared/container";
 import { Handler, APIGatewayProxyEvent, Context, APIGatewayProxyResult } from "aws-lambda";
 import {CreateCarController, DeleteEmployeeController, FindByIdEmployeesController, ListEmployeesController, UpdateEmployeeController} from './modules/Employee/useCases'
-
-import "./shared/container";
 
 export const listAll: Handler = async  (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
   const listEmployeesController = new ListEmployeesController()
@@ -30,7 +32,7 @@ export const create: Handler = async  (event: APIGatewayProxyEvent, context: Con
   const newEmployee = await createCarController.handle(event, context)
 
   return {
-    statusCode: 200,
+    statusCode: 201,
     body: JSON.stringify(newEmployee)
   };
 };
@@ -52,12 +54,16 @@ export const deleteFunction: Handler = async  (event: APIGatewayProxyEvent, cont
   const result = await deleteEmployeeController.handle(event, context)
 
   return {
-    statusCode: 200,
+    statusCode: 204,
     body: JSON.stringify({message: result})
   };
 };
 
+export const docs: Handler = async  (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
+  swaggerUi.serve
 
+  swaggerUi.setup(swaggerFile)
+};
 
 
 

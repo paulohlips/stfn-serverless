@@ -101,6 +101,8 @@ class EmployeeRepository implements IEmployeeRepository {
       return error
     }
   } 
+
+  async docs()
 }
 
 export { EmployeeRepository };

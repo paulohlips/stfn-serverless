@@ -112,7 +112,7 @@ functions:
           method: delete
           cors: true
   swagger:
-    handler: ./dist/handler.doc
+    handler: ./dist/handler.docs
     description: Show docs UI
     events:
       - http:
