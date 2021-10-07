@@ -1,7 +1,7 @@
 import { uuid } from 'uuidv4';
 
-import { dynamo } from '../../../../../config/database/DynamoDbConn'
-import { IEmployeeRepository } from "../../../repositories/IEmployeerRepository";
+import { dynamo } from '../../../../../../config/database/DynamoDbConn'
+import { IEmployeeRepository } from "../IEmployeerRepository";
 
 interface ICreateEmployeeDTO {
   name: string,
@@ -101,8 +101,6 @@ class EmployeeRepository implements IEmployeeRepository {
       return error
     }
   } 
-
-  async docs()
 }
 
 export { EmployeeRepository };

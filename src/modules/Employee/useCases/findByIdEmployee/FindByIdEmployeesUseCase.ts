@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 import { Context, APIGatewayProxyEvent } from "aws-lambda";
 
-import { IEmployeeRepository } from "../../repositories/IEmployeerRepository";
+import { IEmployeeRepository } from "../../infra/DynamoORM/repositories/IEmployeerRepository";
 import { Employee } from "../../infra/DynamoORM/entities/Employee";
 
 @injectable()

@@ -1,19 +1,18 @@
 import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
-import { AppError } from "@shared/errors/AppError";
 
-import { CreateCarUseCase } from "./CreateCarUseCase";
+import { CreateEmployeesUseCase } from "./CreateEmployeesUseCase";
 
-let createCarUseCase: CreateCarUseCase;
+let createEmployeeUseCase: createEmployeeUseCase;
 let carsRepositoryInMemory: CarsRepositoryInMemory;
 
 describe("Create Car", () => {
   beforeEach(() => {
     carsRepositoryInMemory = new CarsRepositoryInMemory();
-    createCarUseCase = new CreateCarUseCase(carsRepositoryInMemory);
+    createEmployeeUseCase = new createEmployeeUseCase(carsRepositoryInMemory);
   });
 
   it("should be able to create a new car", async () => {
-    const car = await createCarUseCase.execute({
+    const car = await createEmployeeUseCase.execute({
       name: "Name Car",
       description: "Description Car",
       daily_rate: 100,
@@ -27,7 +26,7 @@ describe("Create Car", () => {
   });
 
   it("should not be able to create a car with exists license plate", async () => {
-    await createCarUseCase.execute({
+    await createEmployeeUseCase.execute({
       name: "Car1",
       description: "Description Car",
       daily_rate: 100,
@@ -38,7 +37,7 @@ describe("Create Car", () => {
     });
 
     await expect(
-      createCarUseCase.execute({
+      createEmployeeUseCase.execute({
         name: "Car2",
         description: "Description Car",
         daily_rate: 100,
@@ -47,11 +46,11 @@ describe("Create Car", () => {
         brand: "Brand",
         category_id: "category",
       })
-    ).rejects.toEqual(new AppError("Car already exists!"));
+    ).rejects.toEqual("Car already exists!");
   });
 
   it("should not be able to create a car with available true by default", async () => {
-    const car = await createCarUseCase.execute({
+    const car = await createEmployeeUseCase.execute({
       name: "Car Available",
       description: "Description Car",
       daily_rate: 100,
