@@ -1,11 +1,9 @@
-import { Employee } from "../infra/DynamoORM/entities/Employee";
-
+import { Employee } from "../entities/Employee";
 interface ICreateEmployeeDTO {
   name: string;
   age: number;
   position: string;
 }
-
 interface IEmployeeRepository {
   findById(id: string): any;
   list(): any;

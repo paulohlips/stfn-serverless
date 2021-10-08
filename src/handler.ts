@@ -1,8 +1,6 @@
 import "reflect-metadata";
-import swaggerUi from 'swagger-ui-express'
-
-import swaggerFile from "./swagger.json"
 import "./shared/container";
+
 import { Handler, APIGatewayProxyEvent, Context, APIGatewayProxyResult } from "aws-lambda";
 import {CreateCarController, DeleteEmployeeController, FindByIdEmployeesController, ListEmployeesController, UpdateEmployeeController} from './modules/Employee/useCases'
 
@@ -58,12 +56,5 @@ export const deleteFunction: Handler = async  (event: APIGatewayProxyEvent, cont
     body: JSON.stringify({message: result})
   };
 };
-
-export const docs: Handler = async  (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
-  swaggerUi.serve
-
-  swaggerUi.setup(swaggerFile)
-};
-
 
 

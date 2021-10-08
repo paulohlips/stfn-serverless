@@ -24,11 +24,8 @@ class EmployeeRepository implements IEmployeeRepository {
   };
   
     try {
-      const dynamoData = await dynamo.scan(params, []).promise();
-
-      return dynamoData;
+      return await dynamo.scan(params, []).promise();
     } catch(error) {
-      console.error('We have some problem here, man: ', error);
       return error
     }
   }
@@ -43,7 +40,6 @@ class EmployeeRepository implements IEmployeeRepository {
       await dynamo.put(params).promise()
       return params.Item
     } catch (error) {
-      console.error('We have some problem here, man: ', error);
       return error
     }
 
@@ -62,7 +58,6 @@ class EmployeeRepository implements IEmployeeRepository {
 
       return employee;
     } catch (error) {
-      console.error('We have some problem here, man: ', error);
       return error
     }
   }
@@ -79,7 +74,6 @@ class EmployeeRepository implements IEmployeeRepository {
       await dynamo.put(params).promise()
       return params.Item
     } catch (error) {
-      console.error('We have some problem here, man: ', error);
       return error
     }
   }
@@ -97,7 +91,6 @@ class EmployeeRepository implements IEmployeeRepository {
       await dynamo.delete(params).promise();
       return `Employee ${employeeId} has been deleted`
     } catch (error) {
-      console.error('We have some problem here, man: ', error);
       return error
     }
   } 
