@@ -60,7 +60,7 @@ To start new deploy on AWS:
 $ yarn deploy
 ```
 
-To test locally (this option will start the project at http://localhost:3000 and their requests will integrated with AWS Architecture):
+To test locally (this option will start the project at http://localhost:3000 and their requests will be integrated with AWS Architecture):
 
 ```
 $ serverless offline
