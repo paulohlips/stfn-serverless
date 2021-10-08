@@ -22,9 +22,9 @@ stfn-serverless
 [//]: # "Add the features of your project here:"
 
 
-- **API Integration** 
+- **AWS API Gateway** 
 - **AWS LambdaFunctions** 
-- **DynamoDB** 
+- **AWS DynamoDB** 
 - **NodeJS**
 - **TypeScript**
 - **Swagger**
