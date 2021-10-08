@@ -3,7 +3,7 @@
 stfn-serverless
 </h1>
 
-<p align="center">A serverless project based in AWS Lambda Functions used for apply CRUD operations over "Employee" entity.</p>
+<p align="center">A serverless project based in AWS Lambda Functions used to apply CRUD operations over "Employee" entity.</p>
 
 </p>
 
