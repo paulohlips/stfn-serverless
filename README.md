@@ -30,6 +30,14 @@ stfn-serverless
 - **Swagger**
 - **Serverless Framework** 
 
+## Docs
+
+With this link bellow all enpoints and CRUD operations will be expose for remote testers.
+
+
+Swagger: https://app.swaggerhub.com/apis-docs/paulohlips/stfn-serverless-docs/1.0.0
+
+
 ## Getting started
 
 Clone repo:
@@ -55,13 +63,6 @@ To test locally (this option will start the project at http://localhost:3000 and
 ```
 $ serverless offline
 ```
-## Docs
-
-With this link bellow all enpoints and CRUD operations will be expose for remote testers.
-
-
-Swagger: https://app.swaggerhub.com/apis-docs/paulohlips/stfn-serverless-docs/1.0.0
-
 
 ## License
 
