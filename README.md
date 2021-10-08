@@ -37,6 +37,8 @@ With this link bellow all enpoints and CRUD operations will be expose for remote
 
 Swagger: https://app.swaggerhub.com/apis-docs/paulohlips/stfn-serverless-docs/1.0.0
 
+Postman's Collection: https://www.postman.com/solar-shadow-696468/workspace/stfn-serverless-collection/
+
 
 ## Getting started
 
