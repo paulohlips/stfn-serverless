@@ -22,13 +22,13 @@ stfn-serverless
 [//]: # "Add the features of your project here:"
 
 
-- :aws-apigateway: **API Integration** 
-- :lambda: **AWS LambdaFunctions** 
-- :dynamodb: **DynamoDB** 
-- :handbag: **NodeJS**
-- :: **TypeScript**
-- :: **Swagger**
-- :arrows_counterclockwise:**Serverless Framework** 
+- **API Integration** 
+- **AWS LambdaFunctions** 
+- **DynamoDB** 
+- **NodeJS**
+- **TypeScript**
+- **Swagger**
+- **Serverless Framework** 
 
 ## Getting started
 
